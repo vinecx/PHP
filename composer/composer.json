@@ -1,0 +1,15 @@
+{
+    "name": "vinicius/vinecx",
+    "description": "aula de php 7",
+    "type": "project",
+    "authors": [
+        {
+            "name": "vinecx",
+            "email": "vinx.alm@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "monolog/monolog":"1.0.*"
+    }
+}

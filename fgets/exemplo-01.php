@@ -1,0 +1,38 @@
+<?php
+
+$filename = "usuario.csv";
+$fileexists = true;
+
+if (file_exists($filename)) {
+
+	$file = fopen($filename, "r");
+
+	$headers = explode (",",fgets($file));
+
+	$data = array();
+
+
+	while ($row = fgets($file)) {
+
+		$rowData = explode(",", $row);
+		$linha = array();
+
+		for ($i = 0; $i < count($headers); $i++){
+
+			$linha[$headers[$i]] = $rowData[$i];
+
+		}
+
+		array_push($data, $linha);
+	}
+	} else {
+		$fileexists = false;
+		echo "Arquivo $filename não existe.";
+}
+if ($fileexists = false) {
+	fclose($file)
+}
+
+echo json_encode($data);
+
+?>
